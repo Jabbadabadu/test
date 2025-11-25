@@ -1,0 +1,12 @@
+import requests
+
+url = "https://supremecourt.nt.gov.au"
+print("Testing GET", url)
+
+try:
+    r = requests.get(url, timeout=20)
+    print("Status:", r.status_code)
+    print("Headers:", r.headers)
+    print("Body-start:", r.text[:300])
+except Exception as e:
+    print("ERROR:", e)
